@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jdarling/ingredientparser.svg)](https://travis-ci.org/jdarling/ingredientparser)
+
 Ingredient Parser
 =================
 
