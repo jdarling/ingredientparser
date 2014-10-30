@@ -1,0 +1,30 @@
+{
+  "name": "ingredientparser",
+  "version": "0.0.1",
+  "description": "Parsing of recipe ingredients in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/jdarling/ingredientparser"
+  },
+  "keywords": [
+    "Recipe",
+    "Ingredient",
+    "Parser"
+  ],
+  "author": "Jeremy Darling <jeremy.darling@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdarling/ingredientparser/issues"
+  },
+  "homepage": "https://github.com/jdarling/ingredientparser",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "dependencies": {
+    "i": "^0.3.2"
+  }
+}
