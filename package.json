@@ -1,6 +1,6 @@
 {
   "name": "ingredientparser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parsing of recipe ingredients in JavaScript",
   "main": "index.js",
   "scripts": {
