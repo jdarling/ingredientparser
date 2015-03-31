@@ -14,23 +14,23 @@ var checkMatch = function(source, expect){
   if(sKeys.length!==eKeys.length){
     eKeys.forEach(function(key){
       if(sKeys.indexOf(key)===-1){
-        err = 'Expected key "'+key+'" not found';
+        err = 'Expected key '+JSON.stringify(key)+' not found';
       }
     });
     sKeys.forEach(function(key){
       if(eKeys.indexOf(key)===-1){
-        err = 'Unexpected key "'+key+'" found';
+        err = 'Unexpected key '+JSON.stringify(key)+' found';
       }
     });
   }
   if(!err){
     eKeys.forEach(function(key){
       if(!err){
-        checkError(sKeys.indexOf(key)>-1, 'Invalid expected "'+key+'" key not found');
+        checkError(sKeys.indexOf(key)>-1, 'Invalid expected '+JSON.stringify(key)+' key not found');
         if(typeof(expect[key])==='object'&&typeof(source[key])==='object'){
           checkMatch(source[key], expect[key]);
         }else{
-          checkError(source[key]===expect[key], 'Invalid expected "'+expect[key]+'" but got "'+source[key]+'" for '+key);
+          checkError(source[key]===expect[key], 'Invalid expected '+JSON.stringify(expect[key])+' but got '+JSON.stringify(source[key])+' for '+key);
         }
       }
     });
@@ -194,6 +194,16 @@ describe('Ingredient Parser', function(){
         amount: '1',
         unit: 'Bottle',
         name: 'ketchup'
+      },
+      '2 teaspoons toasted sesame oil, divided': {
+        amount: '2',
+        unit: 'Teaspoon',
+        name: 'toasted sesame oil, divided'
+      },
+      '2 tsp toasted sesame oil': {
+        amount: '2',
+        unit: 'Teaspoon',
+        name: 'toasted sesame oil'
       }
     };
     Object.keys(testCases).forEach(function(name){
